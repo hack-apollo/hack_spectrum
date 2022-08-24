@@ -134,7 +134,7 @@ void loop() {
     uint8_t fft_value;
     fft_value = fft_result[i];
     fft_value = ((prev_fft_value[i] * 3) + fft_value) / 4;   
-    bar_height[i] = fft_value / (255 / (MATRIX_HEIGHT-1));       // scale bar height
+    bar_height[i] = fft_value / (255 / (MATRIX_HEIGHT));       // scale bar height
     if (bar_height[i] > peak_height[i])                          // peak up
       peak_height[i] = min((MATRIX_HEIGHT-1), (int)bar_height[i]);
     prev_fft_value[i] = fft_value;        
